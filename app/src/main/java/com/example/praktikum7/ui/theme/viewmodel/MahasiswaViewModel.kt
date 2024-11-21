@@ -7,16 +7,19 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class MahasiswaViewModel : ViewModel() { //Dinyatakan viewmodel karena inherit viewmodel
+class MahasiswaViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(DataMahasiswa())
     val uiState: StateFlow<DataMahasiswa> = _uiState.asStateFlow()
 
     fun saveDataMahasiswa(listDM: List<String>){
         _uiState.update { dataMhs ->
             dataMhs.copy(
-                nama = listDM[0], //nama akan mendapat nilai dr listDM
+                nama = listDM[0],
                 gender = listDM[1],
-                alamat = listDM[2])
+                email = listDM[2],
+                alamat = listDM[3],
+                NIM = listDM[4]
+            )
         }
     }
 }

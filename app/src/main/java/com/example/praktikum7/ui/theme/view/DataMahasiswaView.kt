@@ -36,7 +36,7 @@ fun DetailMahasiswaView(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally // Menambahkan jarak antar elemen
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.padding(16.dp))
         Text(
@@ -47,22 +47,21 @@ fun DetailMahasiswaView(
             textAlign = TextAlign.Center
         )
 
-        // Menampilkan data mahasiswa
+
         listDataMhs.forEach { items ->
             CardSection(
                 judulParam = items.first,
                 isiParam = items.second
             )
         }
-        // Tombol Kembali di tengah
+
         ElevatedButton (
             onClick = { onBackButton() },
-            modifier = Modifier.fillMaxWidth() // Tombol akan mengisi lebar layar
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text("Kembali")
         }
 
-//        Spacer(modifier = Modifier.weight(1f)) // Menambahkan ruang agar tombol berada di bawah
 
     }
 }
