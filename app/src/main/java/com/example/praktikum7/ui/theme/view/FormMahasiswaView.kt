@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -60,3 +61,32 @@ fun FormMahasiswaView(
                 }
             }
         }
+
+        OutlinedTextField(value = email,
+            onValueChange = {email = it},
+            placeholder = { Text("Masukkan emailmu") },
+            label = { Text("Email") },
+            modifier= Modifier.fillMaxWidth().padding(5.dp)
+        )
+
+        OutlinedTextField(value = alamat,
+            onValueChange = {alamat = it},
+            placeholder = { Text("Masukkan alamatmu") },
+            label = { Text("Alamat") },
+            modifier= Modifier.fillMaxWidth().padding(5.dp)
+        )
+
+        OutlinedTextField(value = noHP,
+            onValueChange = {noHP = it},
+            placeholder = { Text("Masukkan nomormu") },
+            label = { Text("Nomor") },
+            modifier= Modifier.fillMaxWidth().padding(5.dp)
+        )
+
+        Button(onClick = {onSubmitClicked(dataMahasiswa)})
+        {
+            Text("Simpan")
+        }
+
+    }
+}
